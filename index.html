@@ -2,90 +2,241 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paramatrix Tech Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramatrix Tech - Engineering Automation</title>
+
     <style>
+        :root {
+            --primary-gradient: linear-gradient(45deg, #0060ff, #00c3ff, #ffe15a, #ff7a3d, #ff3d3d);
+            --dark-bg: #111;
+            --light-bg: #fafafa;
+            --text-dark: #222;
+            --text-light: #fff;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--light-bg);
+            color: var(--text-dark);
         }
 
+        /* HEADER */
         header {
-            background: #333;
-            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px 20px;
+            background: var(--dark-bg);
             color: white;
-            text-align: center;
+            flex-wrap: wrap;
+            /* responsive */
         }
 
-        nav {
-            background: #444;
-            padding: 10px;
+        header img {
+            height: 110px;
+            width: auto;
+        }
+
+        header div {
             text-align: center;
+            /* prevents misalignment on small screens */
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            margin: 0;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #1a1a1a;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         nav a {
             color: white;
-            margin: 0 15px;
+            margin: 0 18px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 1rem;
         }
 
+        nav a:hover {
+            color: #00c3ff;
+        }
+
+        /* SECTIONS */
         section {
-            padding: 40px;
-            max-width: 900px;
+            padding: 25px 20px;
+            max-width: 950px;
             margin: auto;
         }
 
         h2 {
-            color: #333;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
+        /* VIDEO */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 700px;
+            height: 380px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        /* CONTACT FORM */
         .contact-form {
             max-width: 500px;
-            margin: auto;
+            margin: 25px auto;
+            background: #fff;
+            padding: 40px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         input,
         textarea {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
+            padding: 14px 16px;
+            margin: 15px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
         }
 
+        /* BUTTON */
         button {
-            background: #333;
-            color: white;
-            padding: 10px 20px;
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1rem;
+            background: var(--dark-bg);
             border: none;
+            border-radius: 8px;
+            color: white;
             cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s ease;
         }
 
         button:hover {
-            background: #222;
+            opacity: 0.85;
         }
 
+        /* FOOTER */
         footer {
-            background: #333;
+            background: #111;
             color: white;
             text-align: center;
-            padding: 15px;
-            margin-top: 40px;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* ============================= */
+        /*      RESPONSIVE BREAKPOINTS   */
+        /* ============================= */
+
+        /* TABLETS */
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                padding: 25px 10px;
+            }
+
+            header img {
+                height: 100px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                margin: 0 12px;
+                font-size: 0.95rem;
+            }
+
+            iframe {
+                height: 330px;
+            }
+        }
+
+        /* MOBILE PHONES */
+        @media (max-width: 600px) {
+
+            header {
+                padding: 20px 10px;
+            }
+
+            header img {
+                height: 85px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                padding: 10px 5px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px 10px;
+                font-size: 0.9rem;
+            }
+
+            iframe {
+                height: 250px;
+            }
+
+            .contact-form {
+                padding: 25px 20px;
+            }
+
+            button {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 
 <body>
+
     <header>
-        <h1>Paramatrix Tech</h1>
-        <p>Design Faster. Build Smarter.</p>
+        <img src="assests\images\logo_3-removebg-preview.png" alt="Paramatrix Tech Logo">
+        <div>
+            <h1>Paramatrix Tech</h1>
+            <p>Design Faster. Build Smarter.</p>
+        </div>
     </header>
 
     <nav>
         <a href="#about">About Us</a>
         <a href="#services">Services</a>
         <a href="#videos">Videos</a>
-        <a href="#contact">Contact Us</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <section id="about">
@@ -95,9 +246,11 @@
             engineering deliverables—including 2D manufacturing drawings, GA diagrams, 3D models, and BOMs—fully
             customized to each organization’s workflow and standards.
             <br>
+            <br>
             By eliminating repetitive manual tasks, reducing design errors, and accelerating development cycles, we
             empower manufacturers to significantly improve efficiency, reduce operational costs, and bring products to
             market faster than ever before.
+            <br>
             <br>
             Built to integrate seamlessly into existing design ecosystems, our solutions enhance engineering accuracy,
             consistency, and productivity. With Paramatrix Tech, transformer design becomes smarter, faster, and more
@@ -128,25 +281,27 @@
 
     <section id="videos">
         <h2>Videos</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/ST38pTwBfPY" frameborder="0"
-            allowfullscreen>
-        </iframe>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/ST38pTwBfPY" allowfullscreen></iframe>
+        </div>
 
     </section>
 
     <section id="contact">
         <h2>Contact Us</h2>
+
         <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
             <input type="text" name="name" placeholder="Your Name" required />
             <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
     </section>
 
     <footer>
-        <p>© 2025 Your Company Name. All Rights Reserved.</p>
+        <p>© 2025 Paramatrix Tech. All Rights Reserved.</p>
     </footer>
+
 </body>
 
 </html>
